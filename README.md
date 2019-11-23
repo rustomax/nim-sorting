@@ -72,17 +72,25 @@ Benchmarking sorting algorithms with 100000 integers
   Quicksort  :  0.010733 sec
 ```
 
-### Notice effect of compile-time switches
-```text
--d:release
-  Quicksort  :  0.000069 sec
-  Quicksort  :  0.000885 sec
-  Quicksort  :  0.011673 sec
-  Quicksort  :  0.134086 sec -> 100%
+### Playing with compile-time switches
 
--d:danger
-  Quicksort  :  0.000042 sec
-  Quicksort  :  0.000510 sec
-  Quicksort  :  0.006424 sec
-  Quicksort  :  0.076204 sec -> 43% improvement vs release build for large arrays
+```text
+CPP: cpp
+RELEASE: -d:release
+DANGER: -d:danger
+LTO: -d:lto
+NRT: --newruntime
+
+Benchmarking Quicksort with 100000 integers
+
+C RELEASE NRT      : 0.011169 sec -> 100%
+C RELEASE LTO      : 0.010939 sec
+C RELEASE          : 0.010693 sec
+CPP RELEASE        : 0.008718 sec
+
+C DANGER NRT       : 0.006382 sec
+CPP DANGER NRT     : 0.006336 sec
+CPP DANGER         : 0.006275 sec
+C DANGER           : 0.006166 sec
+CPP DANGER NRT LTO : 0.006151 sec -> 45% improvement vs C RELEASE NRT
 ```
