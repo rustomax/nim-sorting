@@ -8,17 +8,11 @@ proc partition[T](a: var openArray[T], low, high: int): int =
     swap a[i + 1], a[high]
     return i + 1
 
-proc quickSort[T](a: var openArray[T], low, high: int) =    
+proc sort[T](a: var openArray[T], low, high: int) =    
     if low < high:
         var pi = partition(a, low, high)
-        quickSort(a, low, pi - 1)
-        quickSort(a, pi + 1, high)
+        sort(a, low, pi - 1)
+        sort(a, pi + 1, high)
 
-proc sort*[T](a: var openArray[T]) =
-    quickSort(a, 0, a.high)
-
-when isMainModule:
-    var a = @[10, 4, 5, 7, 3, 0, -10, 6]
-    echo a
-    a.sort()
-    echo a
+proc quickSort*[T](a: var openArray[T]) =
+    sort(a, 0, a.high)

@@ -1,4 +1,4 @@
-proc sort*[T](a: var openArray[T]) =
+proc combSort*[T](a: var openArray[T]) =
     var gap = a.len
     var swaps = true
 

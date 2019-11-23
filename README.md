@@ -1,40 +1,60 @@
 # nim-sorting
 A collection of sorting algorithms in Nim
 
-## Compile and run
+## Usage
 
 ```sh
-nim c -r -d:release performance.nim
+nimble install https://github.com/rustomax/nim-sorting
 ```
 
-## Benchmark
+## Tests
+```sh
+nimble test
+```
 
-### 1,000 integers
-| Algorithm | Time (lower is better) |
-| ----------- | ------------ |
-|  Bubble     |  0.001759 sec |
-|  Selection  |  0.001008 sec |
-|  Insertion  |  0.000768 sec |
-|  Merge      |  0.000232 sec |
-|  Comb       |  0.000080 sec |
-|  Quicksort  |  0.000068 sec |
+## Benchmarks
+```sh
+nimble benchmark
+```
 
-### 10,000 integers
-| Algorithm | Time (lower is better) |
-| ----------- | ------------ |
-|  Bubble     |  0.199597 sec |
-|  Selection  |  0.095312 sec |
-|  Insertion  |  0.066165 sec |
-|  Merge      |  0.002195 sec |
-|  Comb       |  0.001312 sec |
-|  Quicksort  |  0.000877 sec |
+### Sample run
+```txt
+Benchmarking sorting algorithms with 1000 integers
+  Bubble     :  0.001661 sec
+  Selection  :  0.000958 sec
+  Insertion  :  0.000728 sec
+  Merge      :  0.000229 sec
+  Comb       :  0.000082 sec
+  Quicksort  :  0.000071 sec
 
-### 100,000 integers
-| Algorithm | Time (lower is better) |
-| ----------- | ------------ |
-|  Bubble     | 22.427124 sec |
-|  Selection  |  9.188108 sec |
-|  Insertion  |  6.127985 sec |
-|  Merge      |  0.031473 sec |
-|  Comb       |  0.017001 sec |
-|  Quicksort  |  0.011420 sec |
+Benchmarking sorting algorithms with 10000 integers
+  Bubble     :  0.201240 sec
+  Selection  :  0.095286 sec
+  Insertion  :  0.069481 sec
+  Merge      :  0.002582 sec
+  Comb       :  0.001390 sec
+  Quicksort  :  0.001075 sec
+
+Benchmarking sorting algorithms with 100000 integers
+  Bubble     : 22.671496 sec
+  Selection  :  9.484583 sec
+  Insertion  :  6.305446 sec
+  Merge      :  0.031115 sec
+  Comb       :  0.015273 sec
+  Quicksort  :  0.010733 sec
+```
+
+### Notice effect of compile-time switches
+```text
+-d:release
+  Quicksort  :  0.000069 sec
+  Quicksort  :  0.000885 sec
+  Quicksort  :  0.011673 sec
+  Quicksort  :  0.134086 sec -> 100%
+
+-d:danger
+  Quicksort  :  0.000042 sec
+  Quicksort  :  0.000510 sec
+  Quicksort  :  0.006424 sec
+  Quicksort  :  0.076204 sec -> 43% improvement vs release build
+```

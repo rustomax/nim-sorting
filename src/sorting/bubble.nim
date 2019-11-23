@@ -1,4 +1,4 @@
-proc sort*[T](a: var openArray[T]) =
+proc bubbleSort*[T](a: var openArray[T]) =
     # nothing to do for arrays with less than 2 elements
     if a.len < 2:
         return

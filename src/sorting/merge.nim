@@ -1,4 +1,4 @@
-proc sort*[T](a: var openArray[T]) =
+proc mergeSort*[T](a: var openArray[T]) =
     if a.len > 1:
         # Divide the array in half
         let mid = a.len div 2
@@ -6,8 +6,8 @@ proc sort*[T](a: var openArray[T]) =
         var right = a[mid .. a.high]
 
         # Sort the halves
-        left.sort()
-        right.sort()
+        left.mergeSort()
+        right.mergeSort()
 
         # Merge the halves
         var i, j, k = 0
