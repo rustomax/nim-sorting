@@ -48,28 +48,31 @@ nimble benchmark
 ### Sample performance comparison
 ```txt
 Benchmarking sorting algorithms with 1000 integers
-  Bubble     :  0.001661 sec
-  Selection  :  0.000958 sec
-  Insertion  :  0.000728 sec
-  Merge      :  0.000229 sec
-  Comb       :  0.000082 sec
-  Quicksort  :  0.000071 sec
+  Bubble     :  0.001628 sec
+  Selection  :  0.001293 sec
+  Insertion  :  0.001357 sec
+  Merge      :  0.000345 sec
+  Heap       :  0.000211 sec
+  Comb       :  0.000084 sec
+  Quicksort  :  0.000072 sec
 
 Benchmarking sorting algorithms with 10000 integers
-  Bubble     :  0.201240 sec
-  Selection  :  0.095286 sec
-  Insertion  :  0.069481 sec
-  Merge      :  0.002582 sec
-  Comb       :  0.001390 sec
-  Quicksort  :  0.001075 sec
+  Bubble     :  0.207325 sec
+  Selection  :  0.098015 sec
+  Insertion  :  0.066177 sec
+  Merge      :  0.002245 sec
+  Heap       :  0.001876 sec
+  Comb       :  0.001506 sec
+  Quicksort  :  0.001338 sec
 
 Benchmarking sorting algorithms with 100000 integers
-  Bubble     : 22.671496 sec
-  Selection  :  9.484583 sec
-  Insertion  :  6.305446 sec
-  Merge      :  0.031115 sec
-  Comb       :  0.015273 sec
-  Quicksort  :  0.010733 sec
+  Bubble     : 22.345801 sec
+  Selection  :  9.118128 sec
+  Insertion  :  6.093889 sec
+  Merge      :  0.027296 sec
+  Heap       :  0.027507 sec
+  Comb       :  0.020545 sec
+  Quicksort  :  0.011738 sec
 ```
 
 ### Playing with compile-time switches
