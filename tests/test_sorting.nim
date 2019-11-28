@@ -8,6 +8,7 @@ import sorting/insertion
 import sorting/merge
 import sorting/quicksort
 import sorting/selection
+import sorting/heap
 
 type
     Student = object
@@ -79,5 +80,6 @@ proc main() =
     testSuite("Merge Sort", mergeSort)
     testSuite("Quick Sort", quickSort)
     testSuite("Selection Sort", selectionSort)
+    testSuite("Heap Sort", heapSort)
 
 main()

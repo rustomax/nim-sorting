@@ -4,6 +4,7 @@ import sorting/bubble
 import sorting/comb
 import sorting/insertion
 import sorting/merge
+import sorting/heap
 import sorting/quicksort
 import sorting/selection
 
@@ -26,6 +27,7 @@ proc benchmark() =
     echo fmt"  Selection  : {measure(selectionSort):>9.6f} sec"
     echo fmt"  Insertion  : {measure(insertionSort):>9.6f} sec"
     echo fmt"  Merge      : {measure(mergeSort):>9.6f} sec"
+    echo fmt"  Heap       : {measure(heapSort):>9.6f} sec"
     echo fmt"  Comb       : {measure(combSort):>9.6f} sec"
     echo fmt"  Quicksort  : {measure(quickSort):>9.6f} sec"
 
