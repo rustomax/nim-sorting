@@ -16,7 +16,7 @@ type
       gpa: float
 
 proc `<`*(a, b: Student): bool {.inline.} =
-    return a.gpa < b.gpa
+    a.gpa < b.gpa
 
 template testSuite(suiteName: string, fn: untyped) =
     suite suiteName:
