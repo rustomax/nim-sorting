@@ -11,6 +11,7 @@ import sorting/selection
 var size: int
 
 proc genRandom(): seq[int] =
+    result = newSeqOfCap[int](size)
     for i in 1 .. size:
         result.add rand(size)
 
